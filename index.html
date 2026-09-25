@@ -1,179 +1,54 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111111">
-<meta name="description" content="Pedidos online - Santo Pecado 17-29">
-<title>Santo Pecado 17-29 | Pedidos</title>
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111"><title>Santo Pecado 17-29</title>
 <style>
-:root{--bg:#0d0d0d;--card:#171717;--text:#f7f7f7;--muted:#b8b8b8;--accent:#d6a84f;--danger:#c94b4b}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-header{position:sticky;top:0;z-index:10;background:rgba(13,13,13,.96);border-bottom:1px solid #292929;padding:14px 16px}
-.brand{text-align:center}.brand h1{margin:0;font-size:25px;letter-spacing:1px}.brand p{margin:4px 0 0;color:var(--accent);font-size:12px}
-#mesa{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
-nav{display:flex;gap:8px;overflow:auto;padding:12px 0 2px;scrollbar-width:none}nav button{white-space:nowrap;border:1px solid #333;background:#191919;color:#fff;border-radius:20px;padding:9px 13px}
-nav button.active{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700}
-main{max-width:760px;margin:auto;padding:14px 14px 100px}.section-title{font-size:21px;margin:12px 0}
-.grid{display:grid;gap:12px}.product{background:var(--card);border:1px solid #292929;border-radius:15px;padding:14px}
-.product h3{margin:0 0 6px;font-size:18px}.product p{margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.35}.price{font-weight:800;color:var(--accent);font-size:17px}
-.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.add{border:0;background:var(--accent);color:#111;font-weight:800;border-radius:10px;padding:10px 14px}
-.cartbar{position:fixed;bottom:0;left:0;right:0;background:#121212;border-top:1px solid #333;padding:10px 14px;z-index:20}.cartbtn{width:100%;max-width:760px;margin:auto;display:block;background:var(--accent);border:0;border-radius:12px;padding:14px;font-size:16px;font-weight:800}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:30;padding:16px}.modal.open{display:flex;align-items:flex-end;justify-content:center}.sheet{background:#151515;border:1px solid #333;border-radius:20px 20px 0 0;width:100%;max-width:760px;max-height:90vh;overflow:auto;padding:18px}
-.close{float:right;background:none;border:0;color:#fff;font-size:24px}.item{border-bottom:1px solid #303030;padding:12px 0}.item strong{display:block}.qty{display:flex;align-items:center;gap:10px;margin-top:8px}.qty button{width:32px;height:32px;border-radius:8px;border:1px solid #444;background:#222;color:#fff}.total{font-size:20px;font-weight:800;text-align:right;margin:18px 0;color:var(--accent)}
-input,textarea,select{width:100%;background:#0e0e0e;color:#fff;border:1px solid #3a3a3a;border-radius:10px;padding:12px;margin:6px 0 10px}
-.send{width:100%;border:0;background:#25d366;color:#071b0d;border-radius:12px;padding:14px;font-weight:900;font-size:16px}
-.small{color:var(--muted);font-size:12px}
-.empty{text-align:center;color:var(--muted);padding:30px}
-</style>
-</head>
-<body>
-<header>
-  <div class="brand"><h1>✦ SANTO PECADO 17-29 ✦</h1><p>Pedidos online</p></div>
-  <div id="mesa">Mesa: <strong id="mesaTexto">Para indicar</strong></div>
-  <nav id="nav"></nav>
-</header>
+:root{--o:#f28a18;--gold:#ffc23a;--d:#0c0c0c;--r:#671a18;--bg:#f6f2ec;--mut:#707070;--green:#25d366}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#151515;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+button,input,textarea,select{font:inherit}.top{position:sticky;top:0;z-index:40;background:#0b0b0b;color:white;padding:11px 14px;box-shadow:0 2px 15px #0005}.topin{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:1000;font-size:23px;letter-spacing:.5px}.logo span{display:block;color:var(--o);font-size:11px;letter-spacing:3px;margin-top:5px}.actions{display:flex;gap:7px}.btn{border:0;border-radius:11px;padding:10px 13px;font-weight:900;cursor:pointer}.cart{background:var(--o)}.admin{background:#292929;color:#fff}
+.hero{background:radial-gradient(circle at 50% 10%,#522115,#0c0c0c 60%);color:white;padding:28px 15px}.heroIn{max-width:1200px;margin:auto;text-align:center}.hero h1{margin:0;font-size:32px}.hero p{color:#ffd7a6;margin:8px 0}.cats{position:sticky;top:66px;z-index:30;background:#fff;border-bottom:1px solid #ddd;white-space:nowrap;overflow:auto}.cat{display:inline-block;padding:13px 14px;font-weight:950;color:#666;cursor:pointer}.cat.on{color:var(--o);border-bottom:3px solid var(--o)}
+main{max-width:1200px;margin:18px auto;padding:0 14px}.notice{background:#fff0dc;border-left:5px solid var(--o);border-radius:11px;padding:12px;margin-bottom:20px}.sec{scroll-margin-top:119px;margin:28px 0}.sec h2{margin:0 0 13px;font-size:25px}.sub{font-size:13px;color:#888}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}.card{background:#fff;border:1px solid #eee;border-radius:18px;overflow:hidden;box-shadow:0 5px 17px #0000000c}.pic{width:100%;height:210px;object-fit:cover;display:block;background:#ddd}.body{padding:15px}.tag{color:var(--o);font-size:11px;font-weight:1000;text-transform:uppercase}.card h3{margin:4px 0}.desc{font-size:13px;color:#666;line-height:1.42;min-height:65px}.bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}.price{font-size:18px;font-weight:1000}.add{border:0;border-radius:10px;background:#111;color:#fff;padding:10px 14px;font-weight:900;cursor:pointer}.add:hover{background:var(--o);color:#111}.ref{font-size:10px;color:#999;margin-top:7px}
+footer{background:#111;color:#fff;text-align:center;padding:25px}.wa{color:#7ff09a;font-weight:900}
+.mask,.adminMask{display:none;position:fixed;inset:0;background:#0009;z-index:100}.mask.show,.adminMask.show{display:block}.sheet{position:absolute;right:0;top:0;height:100%;width:min(500px,100%);background:#fff;padding:18px;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:34px;height:34px}.line{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #eee;padding:12px 0}.qty button{width:28px;height:28px;border:0;border-radius:7px}.total{font-size:23px;font-weight:1000;margin:17px 0}.field{width:100%;padding:12px;border:1px solid #ccc;border-radius:9px;margin:5px 0 9px}.send{width:100%;padding:14px;border:0;border-radius:11px;background:var(--green);color:#fff;font-weight:1000;cursor:pointer}.small{font-size:12px;color:#777}.box{background:#fafafa;border:1px solid #ddd;border-radius:12px;padding:12px;margin:12px 0}.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.tabs button{border:0;border-radius:9px;padding:9px;background:#eee;font-weight:800}.order{background:#fff;border:1px solid #ddd;border-radius:12px;padding:12px;margin:8px 0}.status{font-size:12px;font-weight:900;background:#fff0dc;border-radius:6px;padding:4px 7px}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.two input{width:100%;padding:9px;border:1px solid #ccc;border-radius:8px}.save{width:100%;background:#111;color:#fff;border:0;border-radius:9px;padding:10px;font-weight:900;margin-top:9px}.adminSheet{width:min(950px,100%);height:100%;background:#fff;margin-left:auto;padding:18px;overflow:auto}
+@media(max-width:600px){.logo{font-size:20px}.hero h1{font-size:25px}.grid{grid-template-columns:1fr}.pic{height:230px}.two{grid-template-columns:1fr}}
+</style></head><body>
+<header class="top"><div class="topin"><div class="logo">SANTO PECADO <span>17-29 · COMIDAS RÁPIDAS</span></div><div class="actions"><button class="btn admin" onclick="openAdmin()">⚙️</button><button class="btn cart" onclick="openCart()">🛒 <span id="cnt">0</span></button></div></div></header>
+<section class="hero"><div class="heroIn"><h1>PECADOR POR FUERA, DELICIA POR DENTRO.</h1><p>Haz tu pedido desde el celular y recíbelo por domicilio.</p></div></section>
+<nav class="cats" id="cats"></nav>
+<main><div class="notice">🔥 <b>El Fuego:</b> todas las alitas incluyen papas a la francesa y ensalada. <span class="small">Las fotos principales son las que nos enviaste; las que aún faltan se pueden reemplazar por fotos propias.</span></div><div id="menu"></div></main>
+<footer><b>SANTO PECADO 17-29</b><br><span class="wa">WhatsApp: 311 663 7215 · 312 209 1217</span><br><small>Parque Principal · al lado de la Iglesia Santo Cristo · Zaragoza, Antioquia</small></footer>
 
-<main>
-  <h2 class="section-title" id="catTitle">La Gula</h2>
-  <div class="grid" id="products"></div>
-</main>
+<div class="mask" id="cartMask"><div class="sheet"><button class="close" onclick="closeCart()">✕</button><h2>🛒 Tu pedido</h2><div id="cart"></div><div class="total">Subtotal: $<span id="subtotal">0</span></div><select id="zone" class="field" onchange="updateCart()"><option value="0">Recoger en el local — $0</option></select><div class="total">Total: $<span id="total">0</span></div>
+<input id="name" class="field" placeholder="Nombre"><input id="phone" class="field" placeholder="Teléfono"><input id="address" class="field" placeholder="Dirección / punto de entrega"><select id="pay" class="field"><option>Efectivo</option><option>Transferencia</option><option>Pago al recibir</option></select><textarea id="notes" class="field" rows="2" placeholder="Observaciones"></textarea>
+<button class="send" onclick="sendOrder()">📲 ENVIAR PEDIDO POR WHATSAPP</button></div></div>
 
-<div class="cartbar"><button class="cartbtn" onclick="openCart()">🛒 Ver pedido (<span id="count">0</span>) · <span id="barTotal">$0</span></button></div>
-
-<div class="modal" id="cartModal">
-  <div class="sheet">
-    <button class="close" onclick="closeCart()">×</button>
-    <h2>Tu pedido</h2>
-    <div id="cartItems"></div>
-    <div class="total">Total: <span id="total">$0</span></div>
-
-    <label>Nombre</label>
-    <input id="name" placeholder="Tu nombre">
-
-    <label>Tipo de pedido</label>
-    <select id="type">
-      <option value="mesa">En mesa</option>
-      <option value="recoger">Para recoger</option>
-      <option value="domicilio">Domicilio</option>
-    </select>
-
-    <label>Observaciones</label>
-    <textarea id="notes" rows="3" placeholder="Ej: sin cebolla, salsa aparte..."></textarea>
-
-    <p class="small">Al confirmar, se abrirá WhatsApp con el resumen del pedido.</p>
-    <button class="send" onclick="sendWhatsApp()">📲 Confirmar pedido por WhatsApp</button>
-  </div>
-</div>
+<div class="adminMask" id="adminMask"><div class="adminSheet"><button class="close" onclick="closeAdmin()">✕</button><h2>⚙️ Panel Santo Pecado 17-29</h2><div class="tabs"><button onclick="adminTab('prices')">💰 Precios</button><button onclick="adminTab('orders')">🧾 Pedidos</button><button onclick="adminTab('zones')">🛵 Domicilios</button></div><div id="adminContent"></div></div></div>
 
 <script>
-const WHATSAPP = ["573122091217","573116637215"]; // Cambia este número si el restaurante usa otro WhatsApp.
-
-const categories = [
- {name:"La Gula", items:[
-  ["Pecado Original","Papas clásicas","12000"],
-  ["La Bandida","Papas Caleñas","16000"],
-  ["La Pecadora","Papas Rancheras","18000"],
-  ["17-29 Familiar","Papas familiares","30000"],
-  ["La Divina","Papas Costeñas","20000"]
- ]},
- {name:"La Tentación", items:[
-  ["El Inocente","Perro clásico","14000"],
-  ["El Hereje","Perro mexicano","17000"],
-  ["El Condenado","Perro ranchero","18000"],
-  ["El Pecador","Perro suizo","19000"]
- ]},
- {name:"El Pecado", items:[
-  ["La Perra Preñada","Perras con ingredientes de la casa","22000"],
-  ["La Perra Bandida","Perras con combinación especial","24000"]
- ]},
- {name:"Hamburguesas", items:[
-  ["Santo Pecado","Hamburguesa clásica de la casa","22000"],
-  ["La Tentación","Doble carne","28000"],
-  ["La Interesada","Triple carne","34000"]
- ]},
- {name:"Arepas", items:[
-  ["La Bendición","Arepa ranchera","18000"],
-  ["La Confesión","Arepa de ropa vieja","19000"],
-  ["La Consagrada","Arepa de jamón y queso","15000"],
-  ["El Milagro","Arepa de atún y camarón","22000"]
- ]},
- {name:"Alitas", items:[
-  ["La Excomulgada","BBQ","22000"],
-  ["La Ardiente","BBQ picante","22000"],
-  ["La Pasión","Maracuyá","22000"],
-  ["La Infernal","Buffalo","22000"],
-  ["La Caprichosa","Tamarindo","22000"],
-  ["La Condenación","Tamarindo picante","22000"]
- ]},
- {name:"Bebidas", items:[
-  ["Gaseosa","Gaseosa personal","5000"],
-  ["Agua","Agua embotellada","4000"]
- ]}
-];
-
-let cart=[];
-const money=n=>new Intl.NumberFormat("es-CO",{style:"currency",currency:"COP",maximumFractionDigits:0}).format(n);
-
-function init(){
- const params=new URLSearchParams(location.search);
- const m=params.get("mesa");
- if(m){document.getElementById("mesaTexto").textContent=m; document.getElementById("type").value="mesa";}
- const nav=document.getElementById("nav");
- categories.forEach((c,i)=>{
-   const b=document.createElement("button"); b.textContent=c.name; b.onclick=()=>showCategory(i);
-   if(i===0)b.classList.add("active"); nav.appendChild(b);
- });
- showCategory(0); renderCart();
-}
-function showCategory(i){
- document.getElementById("catTitle").textContent=categories[i].name;
- const box=document.getElementById("products"); box.innerHTML="";
- categories[i].items.forEach((p,j)=>{
-   const el=document.createElement("article"); el.className="product";
-   el.innerHTML=`<h3>${p[0]}</h3><p>${p[1]}</p><div class="row"><span class="price">${money(+p[2])}</span><button class="add" onclick="add(${i},${j})">Agregar</button></div>`;
-   box.appendChild(el);
- });
- [...document.querySelectorAll("nav button")].forEach((b,k)=>b.classList.toggle("active",k===i));
- window.scrollTo({top:0,behavior:"smooth"});
-}
-function add(ci,pi){
- const p=categories[ci].items[pi];
- const found=cart.find(x=>x.name===p[0]);
- if(found)found.qty++; else cart.push({name:p[0],desc:p[1],price:+p[2],qty:1});
- renderCart();
-}
-function change(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);renderCart();}
-function total(){return cart.reduce((s,x)=>s+x.price*x.qty,0)}
-function renderCart(){
- document.getElementById("count").textContent=cart.reduce((s,x)=>s+x.qty,0);
- document.getElementById("barTotal").textContent=money(total());
- const box=document.getElementById("cartItems");
- if(!cart.length){box.innerHTML='<div class="empty">Tu carrito está vacío.</div>';document.getElementById("total").textContent=money(0);return;}
- box.innerHTML=cart.map((x,i)=>`<div class="item"><strong>${x.name}</strong><span class="small">${money(x.price)} c/u</span><div class="qty"><button onclick="change(${i},-1)">−</button><b>${x.qty}</b><button onclick="change(${i},1)">+</button><span>${money(x.price*x.qty)}</span></div></div>`).join("");
- document.getElementById("total").textContent=money(total());
-}
-function openCart(){document.getElementById("cartModal").classList.add("open");}
-function closeCart(){document.getElementById("cartModal").classList.remove("open");}
-function sendWhatsApp(){
- if(!cart.length){alert("Agrega al menos un producto.");return;}
- const name=document.getElementById("name").value.trim()||"Cliente";
- const type=document.getElementById("type").value;
- const mesa=document.getElementById("mesaTexto").textContent;
- const notes=document.getElementById("notes").value.trim();
- let msg="*SANTO PECADO 17-29*%0A%0A*Nuevo pedido*%0A";
- msg+=`Nombre: ${encodeURIComponent(name)}%0A`;
- msg+=`Tipo: ${encodeURIComponent(type)}%0A`;
- if(mesa!=="Para indicar")msg+=`Mesa: ${encodeURIComponent(mesa)}%0A`;
- msg+="%0A*Productos:*%0A";
- cart.forEach(x=>{msg+=`• ${encodeURIComponent(x.qty+" x "+x.name)} — ${encodeURIComponent(money(x.price*x.qty))}%0A`;});
- msg+=`%0A*TOTAL: ${encodeURIComponent(money(total()))}*`;
- if(notes)msg+=`%0A%0AObservaciones: ${encodeURIComponent(notes)}`;
- WHATSAPP.forEach((number, index) => {
-   setTimeout(() => window.open(`https://wa.me/${number}?text=${msg}`,"_blank"), index * 500);
- });
-}
+const API='/api';
+let state={categories:[],products:[],deliveryZones:[]},cart=JSON.parse(localStorage.getItem('sp_cart')||'[]');
+const money=n=>new Intl.NumberFormat('es-CO').format(n||0);
+async function api(path,opt={}){try{let r=await fetch(API+path,{headers:{'Content-Type':'application/json'},...opt});if(!r.ok)throw 0;return await r.json()}catch(e){return null}}
+async function init(){let d=await api('/catalog');if(d){state=d;render();loadZones()}else{let d=await fetch('data.json').then(r=>r.json());state=d;render();loadZones()}}
+function render(){document.getElementById('cats').innerHTML=state.categories.map((c,i)=>`<span class="cat ${i?'':'on'}" onclick="go('${c.id}',this)">${c.icon} ${c.name}</span>`).join('');document.getElementById('menu').innerHTML=state.categories.map(c=>`<section class="sec" id="${c.id}"><h2>${c.icon} ${c.name} <span class="sub">· ${c.subtitle}</span></h2><div class="grid">${state.products.filter(p=>p.category===c.id&&p.active).map(p=>`<article class="card"><img class="pic" src="assets/${p.image}" alt="${p.name}" loading="lazy"><div class="body"><div class="tag">${p.variant||c.subtitle}</div><h3>${p.name}</h3><div class="desc">${p.description}</div><div class="bottom"><span class="price">${p.price?'$ '+money(p.price):'Precio por definir'}</span><button class="add" onclick="add(${p.id})">Agregar</button></div><div class="ref">Imagen del producto</div></div></article>`).join('')}</div></section>`).join('')}
+function go(id,e){document.getElementById(id).scrollIntoView({behavior:'smooth'});document.querySelectorAll('.cat').forEach(x=>x.classList.remove('on'));e.classList.add('on')}
+function product(id){return state.products.find(p=>p.id===id)}
+function add(id){let x=cart.find(x=>x.id===id);if(x)x.q++;else cart.push({id,q:1});save();openCart()}
+function change(i,d){cart[i].q+=d;if(cart[i].q<1)cart.splice(i,1);save();updateCart()}
+function save(){localStorage.setItem('sp_cart',JSON.stringify(cart))}
+function loadZones(){let z=state.deliveryZones||[];document.getElementById('zone').innerHTML='<option value="0">Recoger en el local — $0</option>'+z.map((x,i)=>`<option value="${x.fee}">${x.name} — $${money(x.fee)}</option>`).join('');updateCart()}
+function updateCart(){let sub=0;document.getElementById('cnt').textContent=cart.reduce((s,x)=>s+x.q,0);document.getElementById('cart').innerHTML=cart.length?cart.map((x,i)=>{let p=product(x.id),v=(p.price||0)*x.q;sub+=v;return `<div class="line"><div><b>${p.name}</b><br><span class="small">${p.variant||''}</span><br>$ ${money(p.price)} × ${x.q}</div><div class="qty"><button onclick="change(${i},-1)">−</button> ${x.q} <button onclick="change(${i},1)">+</button></div></div>`}).join(''):'<p>Tu carrito está vacío.</p>';let fee=Number(document.getElementById('zone')?.value||0);document.getElementById('subtotal').textContent=money(sub);document.getElementById('total').textContent=money(sub+fee)}
+function openCart(){document.getElementById('cartMask').classList.add('show');loadZones();updateCart()}
+function closeCart(){document.getElementById('cartMask').classList.remove('show')}
+async function sendOrder(){if(!cart.length)return alert('Agrega productos al pedido.');let name=document.getElementById('name').value.trim()||'Cliente',phone=document.getElementById('phone').value.trim()||'No indicado',address=document.getElementById('address').value.trim()||'Por confirmar',pay=document.getElementById('pay').value,notes=document.getElementById('notes').value.trim()||'Ninguna',fee=Number(document.getElementById('zone').value||0),zone=document.getElementById('zone').selectedOptions[0]?.text||'Recoger';let sub=cart.reduce((s,x)=>s+(product(x.id).price||0)*x.q,0),total=sub+fee;let number='SP-'+Date.now().toString().slice(-6);let items=cart.map((x,i)=>{let p=product(x.id);return `${i+1}. ${p.name}${p.variant?' ('+p.variant+')':''} x${x.q} — $${money((p.price||0)*x.q)}`}).join('\\n');let order={number,name,phone,address,zone,pay,notes,items:cart,total,deliveryFee:fee,status:'Recibido',createdAt:new Date().toISOString()};await api('/orders',{method:'POST',body:JSON.stringify(order)});let msg=`🍔 *SANTO PECADO 17-29*\\n🧾 *PEDIDO ${number}*\\n\\n👤 ${name}\\n📱 ${phone}\\n📍 ${address}\\n🛵 ${zone}\\n💳 ${pay}\\n\\n*PRODUCTOS*\\n${items}\\n\\n💰 *TOTAL: $${money(total)}*\\n📝 ${notes}`;localStorage.removeItem('sp_cart');cart=[];save();updateCart();location.href='https://wa.me/573116637215?text='+encodeURIComponent(msg)}
+function openAdmin(){document.getElementById('adminMask').classList.add('show');adminTab('prices')}
+function closeAdmin(){document.getElementById('adminMask').classList.remove('show')}
+function adminTab(t){let c=document.getElementById('adminContent');if(t==='prices')c.innerHTML=`<div class="box"><h3>💰 Precios del menú</h3><div id="priceFields"></div><button class="save" onclick="savePrices()">Guardar precios</button></div>`;if(t==='orders')c.innerHTML=`<div class="box"><h3>🧾 Pedidos</h3><div id="orders"></div></div>`;if(t==='zones')c.innerHTML=`<div class="box"><h3>🛵 Zonas de domicilio</h3><div id="zoneFields"></div><button class="save" onclick="saveZones()">Guardar zonas</button></div>`;if(t==='prices')buildPrices();if(t==='orders')loadOrders();if(t==='zones')buildZones()}
+function buildPrices(){document.getElementById('priceFields').innerHTML=state.categories.map(c=>`<details><summary><b>${c.name}</b></summary><div class="two">${state.products.filter(p=>p.category===c.id).map(p=>`<label class="small">${p.name}<input id="pr_${p.id}" type="number" min="0" value="${p.price||''}" placeholder="Precio"></label>`).join('')}</div></details>`).join('')}
+async function savePrices(){let products=state.products.map(p=>({...p,price:Number(document.getElementById('pr_'+p.id).value||0)}));let r=await api('/catalog',{method:'PUT',body:JSON.stringify({products})});if(r){state.products=products;render();updateCart();alert('Precios guardados en el servidor.')}else alert('El panel está en modo local; para guardar entre dispositivos ejecuta el servidor incluido.')}
+async function loadOrders(){let r=await api('/orders');let orders=r||JSON.parse(localStorage.getItem('sp_orders')||'[]');document.getElementById('orders').innerHTML=orders.length?orders.map((o,i)=>`<div class="order"><b>${o.number}</b> · ${new Date(o.createdAt).toLocaleString('es-CO')}<br>👤 ${o.name} · 📍 ${o.address}<br>💰 <b>$${money(o.total)}</b> · <span class="status">${o.status}</span><br><select class="field" onchange="status(${i},this.value,'${o.number}')"><option ${o.status==='Recibido'?'selected':''}>Recibido</option><option ${o.status==='En preparación'?'selected':''}>En preparación</option><option ${o.status==='Listo'?'selected':''}>Listo</option><option ${o.status==='En camino'?'selected':''}>En camino</option><option ${o.status==='Entregado'?'selected':''}>Entregado</option><option ${o.status==='Cancelado'?'selected':''}>Cancelado</option></select></div>`).join(''):'No hay pedidos.'}
+async function status(i,v,n){await api('/orders/'+encodeURIComponent(n),{method:'PATCH',body:JSON.stringify({status:v})});loadOrders()}
+function buildZones(){document.getElementById('zoneFields').innerHTML=(state.deliveryZones||[]).map((z,i)=>`<label class="small">${z.name}<input id="z_${i}" type="number" value="${z.fee}"></label>`).join('')}
+async function saveZones(){let zones=(state.deliveryZones||[]).map((z,i)=>({...z,fee:Number(document.getElementById('z_'+i).value||0)}));let r=await api('/zones',{method:'PUT',body:JSON.stringify(zones)});state.deliveryZones=zones;loadZones();alert(r?'Zonas guardadas en el servidor.':'Zonas actualizadas localmente.')}
 init();
-</script>
-</body>
-</html>
+</script></body></html>
