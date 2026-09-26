@@ -1,1 +1,336 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santo Pecado 17-29</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#111;
+  color:#fff;
+}
+header{
+  background:#000;
+  padding:20px;
+  text-align:center;
+  border-bottom:2px solid #d4af37;
+}
+h1{
+  margin:0;
+  color:#d4af37;
+}
+.sub{
+  margin-top:6px;
+  color:#ddd;
+}
+main{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
+.hero{
+  text-align:center;
+  padding:25px 10px;
+}
+.hero h2{
+  color:#d4af37;
+  margin:0;
+}
+.categoria{
+  color:#d4af37;
+  border-bottom:1px solid #444;
+  padding-bottom:8px;
+  margin-top:25px;
+}
+.producto{
+  background:#1d1d1d;
+  border:1px solid #333;
+  border-radius:12px;
+  padding:15px;
+  margin:10px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.nombre{
+  font-weight:bold;
+}
+.precio{
+  color:#d4af37;
+  margin-top:5px;
+}
+button{
+  background:#d4af37;
+  border:0;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:bold;
+}
+.carrito{
+  background:#d4af37;
+  color:#000;
+  padding:15px;
+  border-radius:12px;
+  margin-top:25px;
+}
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:6px 0 12px;
+  border-radius:8px;
+  border:1px solid #555;
+}
+.whatsapp{
+  width:100%;
+  background:#168c45;
+  color:#fff;
+  padding:15px;
+  border:0;
+  border-radius:10px;
+  font-size:17px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🍔 SANTO PECADO 17-29</h1>
+<div class="sub">PECA POR EL SABOR</div>
+</header>
+
+<main>
+
+<div class="hero">
+<h2>MENÚ</h2>
+<p>Haz tu pedido fácil y rápido</p>
+</div>
+
+<h2 class="categoria">LA GULA · CAJAS DE PAPAS</h2>
+
+<div class="producto">
+<div><div class="nombre">Pecado Original</div><div class="precio">$12.000</div></div>
+<button onclick="agregar('Pecado Original',12000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Bandida</div><div class="precio">$16.000</div></div>
+<button onclick="agregar('La Bandida',16000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Pecadora</div><div class="precio">$18.000</div></div>
+<button onclick="agregar('La Pecadora',18000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">17-29 Familiar</div><div class="precio">$30.000</div></div>
+<button onclick="agregar('17-29 Familiar',30000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Divina</div><div class="precio">$20.000</div></div>
+<button onclick="agregar('La Divina',20000)">Agregar</button>
+</div>
+
+<h2 class="categoria">LA TENTACIÓN · PERROS</h2>
+
+<div class="producto">
+<div><div class="nombre">El Inocente</div><div class="precio">$14.000</div></div>
+<button onclick="agregar('El Inocente',14000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">El Hereje</div><div class="precio">$17.000</div></div>
+<button onclick="agregar('El Hereje',17000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">El Condenado</div><div class="precio">$18.000</div></div>
+<button onclick="agregar('El Condenado',18000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">El Pecador</div><div class="precio">$19.000</div></div>
+<button onclick="agregar('El Pecador',19000)">Agregar</button>
+</div>
+
+<h2 class="categoria">EL PECADO · PERRAS</h2>
+
+<div class="producto">
+<div><div class="nombre">La Perra Preñada</div><div class="precio">$22.000</div></div>
+<button onclick="agregar('La Perra Preñada',22000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Perra Bandida</div><div class="precio">$24.000</div></div>
+<button onclick="agregar('La Perra Bandida',24000)">Agregar</button>
+</div>
+
+<h2 class="categoria">HAMBURGUESAS</h2>
+
+<div class="producto">
+<div><div class="nombre">Santo Pecado</div><div class="precio">$22.000</div></div>
+<button onclick="agregar('Hamburguesa Santo Pecado',22000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Tentación</div><div class="precio">$28.000</div></div>
+<button onclick="agregar('Hamburguesa La Tentación',28000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Interesada</div><div class="precio">$34.000</div></div>
+<button onclick="agregar('Hamburguesa La Interesada',34000)">Agregar</button>
+</div>
+
+<h2 class="categoria">AREPAS</h2>
+
+<div class="producto">
+<div><div class="nombre">La Bendición</div><div class="precio">$18.000</div></div>
+<button onclick="agregar('La Bendición',18000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Confesión</div><div class="precio">$19.000</div></div>
+<button onclick="agregar('La Confesión',19000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Consagrada</div><div class="precio">$15.000</div></div>
+<button onclick="agregar('La Consagrada',15000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">El Milagro</div><div class="precio">$22.000</div></div>
+<button onclick="agregar('El Milagro',22000)">Agregar</button>
+</div>
+
+<h2 class="categoria">ALITAS</h2>
+
+<div class="producto">
+<div><div class="nombre">La Excomulgada</div><div class="precio">$22.000</div></div>
+<button onclick="agregar('La Excomulgada',22000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Ardiente</div><div class="precio">$22.000</div></div>
+<button onclick="agregar('La Ardiente',22000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Pasión</div><div class="precio">$22.000</div></div>
+<button onclick="agregar('La Pasión',22000)">Agregar</button>
+</div>
+
+<div class="producto">
+<div><div class="nombre">La Infernal</div><div class="precio">$22.000</div></div>
+<button onclick="agregar('La Infernal',22000)">Agregar</button>
+</div>
+
+<div class="carrito">
+<h2>🛒 Mi pedido</h2>
+<div id="lista">No has agregado productos.</div>
+<h3>Total: $<span id="total">0</span></h3>
+
+<label>Nombre</label>
+<input id="nombre" placeholder="Tu nombre">
+
+<label>Teléfono</label>
+<input id="telefono" placeholder="Tu teléfono">
+
+<label>Tipo de pedido</label>
+<select id="tipo">
+<option>Para recoger</option>
+<option>Domicilio</option>
+<option>Comer en el restaurante</option>
+</select>
+
+<label>Dirección</label>
+<input id="direccion" placeholder="Dirección">
+
+<label>Notas</label>
+<textarea id="notas" placeholder="Observaciones del pedido"></textarea>
+
+<button class="whatsapp" onclick="enviarWhatsApp()">
+📲 ENVIAR PEDIDO POR WHATSAPP
+</button>
+</div>
+
+</main>
+
+<script>
+let pedido=[];
+let total=0;
+
+function agregar(nombre,precio){
+pedido.push({nombre,precio});
+total+=precio;
+mostrar();
+}
+
+function mostrar(){
+let lista=document.getElementById("lista");
+
+if(pedido.length===0){
+lista.innerHTML="No has agregado productos.";
+}else{
+lista.innerHTML=pedido.map((p,i)=>
+`${i+1}. ${p.nombre} - $${p.precio.toLocaleString("es-CO")}`
+).join("<br>");
+}
+
+document.getElementById("total").textContent=
+total.toLocaleString("es-CO");
+}
+
+function enviarWhatsApp(){
+
+if(pedido.length===0){
+alert("Agrega al menos un producto.");
+return;
+}
+
+let nombre=document.getElementById("nombre").value;
+let telefono=document.getElementById("telefono").value;
+let tipo=document.getElementById("tipo").value;
+let direccion=document.getElementById("direccion").value;
+let notas=document.getElementById("notas").value;
+
+if(!nombre){
+alert("Escribe tu nombre.");
+return;
+}
+
+let mensaje=
+"🍔 *SANTO PECADO 17-29*%0A%0A"+
+"*PEDIDO*%0A"+
+pedido.map((p,i)=>
+(i+1)+". "+p.nombre+" - $"+
+p.precio.toLocaleString("es-CO")
+).join("%0A")+
+"%0A%0A*TOTAL: $"+
+total.toLocaleString("es-CO")+"*"+
+"%0A%0A*Cliente:* "+nombre+
+"%0A*Teléfono:* "+telefono+
+"%0A*Tipo:* "+tipo+
+"%0A*Dirección:* "+direccion+
+"%0A*Notas:* "+notas;
+
+let numero="573116637215";
+
+window.open(
+"https://wa.me/"+numero+"?text="+mensaje,
+"_blank"
+);
+}
+</script>
+
+</body>
+</html>
