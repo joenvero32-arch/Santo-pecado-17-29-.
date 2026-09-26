@@ -36,7 +36,7 @@ const DEFAULT=[
 let menu=DEFAULT;try{menu=JSON.parse(localStorage.getItem('sp1729_menu')||'null')||DEFAULT}catch(e){menu=DEFAULT};let cart=[];let current=0;let orders=[];try{orders=JSON.parse(localStorage.getItem('sp1729_orders')||'[]')}catch(e){orders=[]}
 const money=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(n);
 function save(){localStorage.setItem('sp1729_menu',JSON.stringify(menu));}
-function init(){renderNav();showCategory(0);renderCart();}
+function init(){try{renderNav();showCategory(0);renderCart()}catch(e){document.body.insertAdjacentHTML('beforeend','<div style="position:fixed;bottom:0;left:0;right:0;background:red;color:white;padding:15px;z-index:99999;font-size:14px">ERROR: '+e.message+'</div>')}}
 function renderNav(){nav.innerHTML='';menu.forEach((c,i)=>{let b=document.createElement('button');b.textContent=c[0];b.onclick=()=>showCategory(i);if(i===current)b.classList.add('active');nav.appendChild(b)})}
 function showCategory(i){current=i;catTitle.textContent=menu[i]?.[0]||'Menú';products.innerHTML='';(menu[i]?.[1]||[]).forEach((p,j)=>{let el=document.createElement('article');el.className='product';let img=p[3]?`<img class="pic" src="${p[3]}" alt="${esc(p[0])}">`:`<div class="pic noPic">🍔</div>`;el.innerHTML=img+`<div class="prodBody"><h3>${esc(p[0])}</h3><p>${esc(p[1])}</p><div class="row"><span class="price">${money(+p[2])}</span><button class="add" onclick="add(${i},${j})">Agregar</button></div></div>`;products.appendChild(el)});document.querySelectorAll('.nav button').forEach((b,k)=>b.classList.toggle('active',k===i))}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
