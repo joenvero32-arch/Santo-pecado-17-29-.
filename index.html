@@ -33,7 +33,7 @@ const DEFAULT=[
 ['Alitas',[['La Excomulgada','BBQ. Incluye papas a la francesa y ensalada.',22000,''],['La Ardiente','BBQ picante. Incluye papas a la francesa y ensalada.',22000,''],['La Pasión','Maracuyá. Incluye papas a la francesa y ensalada.',22000,''],['La Infernal','Búfalo. Incluye papas a la francesa y ensalada.',22000,''],['La Caprichosa','Tamarindo. Incluye papas a la francesa y ensalada.',22000,''],['La Condenación','Tamarindo picante. Incluye papas a la francesa y ensalada.',22000,'']]],
 ['Bebidas',[['Gaseosa','Gaseosa personal.',5000,''],['Agua','Agua embotellada.',4000,'']]]
 ];
-let menu=JSON.parse(localStorage.getItem('sp1729_menu')||'null')||DEFAULT;let cart=[];let current=0;let orders=JSON.parse(localStorage.getItem('sp1729_orders')||'[]');
+let menu=DEFAULT;try{menu=JSON.parse(localStorage.getItem('sp1729_menu')||'null')||DEFAULT}catch(e){menu=DEFAULT};let cart=[];let current=0;let orders=[];try{orders=JSON.parse(localStorage.getItem('sp1729_orders')||'[]')}catch(e){orders=[]}
 const money=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(n);
 function save(){localStorage.setItem('sp1729_menu',JSON.stringify(menu));}
 function init(){renderNav();showCategory(0);renderCart();}
